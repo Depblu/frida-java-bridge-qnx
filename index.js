@@ -340,7 +340,7 @@ class Runtime {
       }
 
       if (this._pollListener === null) {
-        this._pollListener = Interceptor.attach(Module.getExportByName('libc.so', 'epoll_wait'), this._makePollHook());
+        this._pollListener = Interceptor.attach(Module.getExportByName('libc.so.5', 'epoll_wait'), this._makePollHook());
         Interceptor.flush();
       }
 
